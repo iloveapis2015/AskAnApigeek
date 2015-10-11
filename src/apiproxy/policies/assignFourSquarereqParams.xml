@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="assignFourSquarereqParams">
+    <DisplayName>assignFourSquarereqParams</DisplayName>
+    <Properties/>
+    <Set>
+      <QueryParams>
+        <QueryParam name="client_id">STPMU22BKKOB2OR1CJTDQSDKRGYRUT2M5VZHVD3PQCGZ1ZXU</QueryParam>
+        <QueryParam name="client_secret">FF2U5SPEZLLYLHCQWVMSM5P4TS03V3H4GQIR0KHTSMBZFKKW</QueryParam>
+        <QueryParam name="v">20130815</QueryParam>
+        <QueryParam name="near">{location}</QueryParam>
+        <QueryParam name="query">{category}</QueryParam>
+        <QueryParam name="specials">1</QueryParam>
+      </QueryParams>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

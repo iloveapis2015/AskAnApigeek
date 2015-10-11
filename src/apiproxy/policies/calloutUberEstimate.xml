@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="calloutUberEstimate">
+    <DisplayName>calloutUberEstimate</DisplayName>
+    <Properties/>
+    <Request clearPayload="true">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+          <Set>
+            <Headers>
+                <Header name="Authorization">Token oQrP25aPXcalbZQqgDM6C-svEEFVUWSD-MGoI0ar</Header>
+            </Headers>
+                <QueryParams>
+                  <!--SAP Center lat and lng -->
+                  <QueryParam name="start_latitude">37.338208</QueryParam>
+                  <QueryParam name="start_longitude">-121.886329</QueryParam>
+                  <QueryParam name="end_latitude">{fourSquareVenueLat}</QueryParam>
+                  <QueryParam name="end_longitude">{fourSquareVenueLng}</QueryParam>
+                </QueryParams>
+          </Set>
+    </Request>
+    <Response>uberEstimateResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://api.uber.com/v1/estimates/price</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="askanapigeek">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1443994481275</CreatedAt>
+    <CreatedBy>vmehta@apigee.com</CreatedBy>
+    <Description>This API gives recommendations and details by an Apigeek from foursquare and uber</Description>
+    <DisplayName>askanapigeek</DisplayName>
+    <LastModifiedAt>1444002013421</LastModifiedAt>
+    <LastModifiedBy>vmehta@apigee.com</LastModifiedBy>
+    <Policies>
+        <Policy>AssignApigeekResponse</Policy>
+        <Policy>assignFourSquarereqParams</Policy>
+        <Policy>calloutUberEstimate</Policy>
+        <Policy>extractFourSquareResponse</Policy>
+        <Policy>extractFromUberResponse</Policy>
+        <Policy>test</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://test.js</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+    <validate>false</validate>
+</APIProxy>
