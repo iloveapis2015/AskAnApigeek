@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignApigeekResponseAsync">
+    <DisplayName>AssignApigeekResponseAsync</DisplayName>
+    <Properties/>
+    <Set>
+    <Payload contentType='application/json'
+             variablePrefix='%' variableSuffix='#'>{"apigeekSuggests":[{"name": "%fourSquareVenueName0#","url": "%fourSquareVenueUrl0#","specials":"%fourSquareVenueSpecialMessage0#","distance":"%uberDistance0#","duration":"%uberDuration0#","fareEstimate":"%uberEstimate#0"},{"name": "%fourSquareVenueName1#","url": "%fourSquareVenueUrl1#","specials":"%fourSquareVenueSpecialMessage1#","distance":"%uberDistance1#","duration":"%uberDuration1#","fareEstimate":"%uberEstimate#1"}]}
+      </Payload>
+        <StatusCode>200</StatusCode>
+        <ReasonPhrase>OK</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

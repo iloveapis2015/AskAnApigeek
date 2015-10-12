@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="extractFromUberResponse">
+    <DisplayName>extractFromUberResponse</DisplayName>
+    <Properties/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <Source clearPayload="false">uberEstimateResponse</Source>
+    <JSONPayload>
+        <Variable name="uberDistance">
+            <JSONPath>$.prices[0].distance</JSONPath>
+        </Variable>
+      <Variable name="uberDuration">
+            <JSONPath>$.prices[0].duration</JSONPath>
+        </Variable>
+      <Variable name="uberEstimate">
+            <JSONPath>$.prices[0].estimate</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

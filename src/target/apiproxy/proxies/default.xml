@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="CORS">
+            <Condition>(request.verb = &quot;OPTIONS&quot;)</Condition>
+            <Description>Enable CORS Support</Description>
+            <Request>
+                <Step>
+                    <Name>jsExtractOrigin</Name>
+                </Step>
+                <Step>
+                    <Name>assignCorsSupport</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+        <Flow name="Top1">
+            <Condition>(request.queryparam.select=&quot;top1&quot;)and(request.verb = &quot;POST&quot;)</Condition>
+            <Description>Return Top 1 results</Description>
+            <Request>
+                <Step>
+                    <Name>extractFromRequestPayload</Name>
+                </Step>
+                <Step>
+                    <Name>assignFourSquarereqParams</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+        <Flow name="Top5">
+            <Condition>(request.queryparam.select=&quot;top5&quot;)and(request.verb = &quot;POST&quot;)</Condition>
+            <Description>Return Top 5 results</Description>
+            <Request>
+                <Step>
+                    <Name>extractFromRequestPayload</Name>
+                </Step>
+                <Step>
+                    <Name>assignFourSquarereqParams</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+        <Flow name="NotFound">
+            <Request>
+                <Step>
+                    <Name>raiseUnknownResource</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1/askanapigeek</BasePath>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

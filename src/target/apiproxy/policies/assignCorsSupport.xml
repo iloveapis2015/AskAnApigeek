@@ -1,0 +1,20 @@
+<RaiseFault name="assignCorsSupport" enabled = "true">
+  <!-- This policy should be disabled by default and only enabled for APIs needing CORS support through config.json -->
+  <DisplayName>assignCorsSupport</DisplayName>
+  <Description>When the broser sends an OPTIONS call, we have to respond with the following headers for the javascript to work cross domain. Check http://goo.gl/f4ykj for more details on CORS</Description>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <FaultResponse>
+   <Set>
+     <Headers>
+<Header name="Access-Control-Allow-Methods">{methods}</Header>
+<Header name="Access-Control-Allow-Origin">{request.header.Origin}</Header>
+<Header name="Access-Control-Allow-Headers">{reqHeaders}</Header>
+ <Header name="Access-Control-Max-Age">3600</Header>
+
+     </Headers>
+     <Payload></Payload>
+     <StatusCode>200</StatusCode>
+     <ReasonPhrase>OK</ReasonPhrase>
+   </Set>
+ </FaultResponse>
+</RaiseFault>
