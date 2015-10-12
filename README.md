@@ -39,4 +39,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 NOTE - The current location details are HARDCODED to the San Jose Convention Center's lat and lng.(DEMO purpose)
  This can definitely MUST configured externally in a better way as a best practice.
+ 
+ 
+ Link for the AskAnApigeek App - http://apigee-certify-09-prod.apigee.net/v2/demoapp/index.html?#
 
