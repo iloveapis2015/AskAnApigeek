@@ -4,7 +4,7 @@
 ## Org is the name of the organization in which you have an account.
 ## Login to enterprise.apigee.com and check account settings.
 
-org="vinit_training"
+org="askanapigeek"
 environment="test"
 
 ## Do not change the settings below
