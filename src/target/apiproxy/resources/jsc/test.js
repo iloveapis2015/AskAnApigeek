@@ -1,1 +1,0 @@
-var uberEstimateResponse = context.getVariable("uberEstimateResponse.content");
